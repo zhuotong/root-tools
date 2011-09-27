@@ -112,6 +112,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 			new Thread(new Runnable() {
 				@Override
 				public void run() {
+					
 					backupOK = ApkUtils.backupSystemApp();
 					h.sendEmptyMessage(1);
 				}

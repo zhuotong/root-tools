@@ -84,6 +84,7 @@ public class ApkUtils {
 	}
 
 	public static boolean backupSystemApp() {
+		RootUtils.runRootCommand(RootUtils.buildMountCommand());
 		CommandResult result = RootUtils
 				.runRootCommand("cp -r /system/app/* /sdcard/.sapp");
 		return result.error.equals("");
@@ -96,6 +97,7 @@ public class ApkUtils {
 	}
 
 	public static boolean installSystemApp(String path) {
+		RootUtils.runRootCommand(RootUtils.buildMountCommand());
 		String fn = path.substring(0, path.length() - 3) + "*";
 		CommandResult result = RootUtils.runRootCommand("cp -r " + fn
 				+ " /system/app/");
