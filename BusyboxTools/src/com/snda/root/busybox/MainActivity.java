@@ -168,6 +168,7 @@ public class MainActivity extends Activity implements OnItemClickListener,
 			public void run() {
 				CommandResult result = null;
 				copyBusybox();
+				RootUtils.runRootCommand(RootUtils.buildMountCommand());
 				result = RootUtils.runRootCommand(String.format(
 						"cat %sbusybox > /system/xbin/busybox",
 						LOCAL_BUSYBOX_PATH));
